@@ -1,0 +1,56 @@
+    /* posicionando las estrellas al centro*/
+    .main {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+       
+    /* ocultando los inputs */
+    .input {
+     position: absolute;
+     left: -9999px;
+    }
+  
+    /* Asignando separacion y tamano a las estrellas */
+    .label {
+      cursor: pointer;
+      padding: 0 0.1em;
+      font-size: 2rem;
+    }
+    
+    /* Color de las estrellas marcadas*/
+    .icon-star {
+      color: orange;
+    }
+    
+    /* asignando color a estrellas no seleccionadas */
+    .icon-none {
+      color: #eee;
+    }
+  
+    /* asignando color gris al signo de NO RATING */
+    .input-none:checked + .label .icon-none {
+      color: gray;
+    }
+  
+    /* Si cualquier estrella esta marcada, se asiganaran a sus hermanos siguientes color gris claro */
+    .input:checked ~ .label .icon-star {
+      color: #ddd;
+    }
+  
+    /* Marcando color naranja el hover de las estrellas si el rating incrementa */
+    .rating-group:hover .label .icon-star {
+      color: orange;
+    }
+  
+    /* Marcando color gris el hover de las estrellas si el rating decrementa */
+    .input:hover ~ .label .icon-star {
+      color: #ddd;
+    }
+   
+    /* asignando color gris al hover de signo de NO RATING */
+    .input-none:hover + .label .icon-none {
+      color: gray;
+    }
+  
+  
